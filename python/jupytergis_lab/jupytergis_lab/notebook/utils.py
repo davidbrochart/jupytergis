@@ -19,6 +19,7 @@ def multi_urljoin(*parts) -> str:
 
 
 def normalize_path(path: str) -> str:
+    return path
     if os.path.isabs(path):
         return path
     else:

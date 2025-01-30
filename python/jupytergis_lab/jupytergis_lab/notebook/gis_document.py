@@ -64,8 +64,11 @@ class GISDocument(CommWidget):
 
         comm_metadata = GISDocument._path_to_comm(path)
 
+        print(f"{comm_metadata=} {os.getcwd()=} {os.listdir()=}")
+
         # Create an empty project file if it does not exist
         if comm_metadata["path"] and not os.path.isfile(comm_metadata["path"]):
+            print("Creating empty project file")
             with open(comm_metadata["path"], "w") as fd:
                 fd.write("{}")
 
