@@ -72,7 +72,6 @@ export const notebookRendererPlugin: JupyterFrontEndPlugin<void> = {
     }
     class YJupyterGISModelFactory extends YJupyterGISModel {
       ydocFactory(commMetadata: ICommMetadata): Y.Doc {
-        console.log('YJupyterGISModelFactory', commMetadata);
         const { path, format, contentType } = commMetadata;
 
         const fileFormat = format as Contents.FileFormat;
@@ -83,7 +82,6 @@ export const notebookRendererPlugin: JupyterFrontEndPlugin<void> = {
           contentType,
           collaborative: true
         })!;
-        console.log('sharedModel', sharedModel);
         this.jupyterGISModel = new JupyterGISModel({
           sharedModel: sharedModel as IJupyterGISDoc
         });
